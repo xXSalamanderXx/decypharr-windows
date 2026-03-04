@@ -9,6 +9,7 @@ import (
 
 	"github.com/rs/zerolog"
 	"github.com/sirrobot01/decypharr/internal/config"
+	"github.com/sirrobot01/decypharr/pkg/fs"
 )
 
 // Mount represents a mount using the rclone RC client
@@ -29,6 +30,14 @@ func NewMount(provider, customRcloneMount, webdavURL string, rcManager *Manager)
 	} else {
 		mountPath = filepath.Join(cfg.Rclone.MountPath, provider)
 	}
+	
+	// If Windows enhanced mode is enabled, attempt to validate/normalize the provided mount path.
+    // Accepts drive-letter mounts (e.g., Z:\...) and directory mounts (e.g., C:\mnt\zurg\...).
+    if config.WindowsEnhancedEnabled(cfg) {
+        if normalized, err := fs.ValidateAndNormalizePath(mountPath); err == nil {
+            mountPath = normalized
+        }
+    }
 
 	_url, err := url.JoinPath(webdavURL, provider)
 	if err != nil {

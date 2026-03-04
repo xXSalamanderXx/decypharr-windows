@@ -105,6 +105,16 @@ class ConfigManager {
             }
         });
 
+        // windows enhanced toggle
+        const winEnh = document.querySelector('[name="windows_enhanced_mode"]');
+        if (winEnh && config.windows_enhanced_mode !== undefined) {
+            winEnh.checked = !!config.windows_enhanced_mode;
+        }
+        const themeEl = document.querySelector('[name="ui_theme"]');
+        if (themeEl && config.ui_theme) {
+            themeEl.value = config.ui_theme;
+        }
+
         // Handle allowed file types (array)
         if (config.allowed_file_types && Array.isArray(config.allowed_file_types)) {
             document.querySelector('[name="allowed_file_types"]').value = config.allowed_file_types.join(', ');
@@ -1088,6 +1098,10 @@ class ConfigManager {
 
             // QBittorrent configuration
             qbittorrent: this.collectQBittorrentConfig(),
+
+            // UI settings
+            windows_enhanced_mode: document.querySelector('[name="windows_enhanced_mode"]') ? document.querySelector('[name="windows_enhanced_mode"]').checked : false,
+            ui_theme: document.querySelector('[name="ui_theme"]') ? document.querySelector('[name="ui_theme"]').value : 'charcoal',
 
             // Arr configurations
             arrs: this.collectArrConfigs(),

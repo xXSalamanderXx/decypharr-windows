@@ -130,6 +130,12 @@ type Rclone struct {
 	NoChecksum bool `json:"no_checksum,omitempty"` // Don't checksum files on upload
 
 	LogLevel string `json:"log_level,omitempty"`
+	
+	// Windows enhanced functionality flag
+    // When true, enables Windows-specific behaviors such as accepting pre-mounted
+    // rclone WebDAV mounts (drive letters and directory mounts) and creating
+    // verified links (junctions/symlinks) for better Plex/Emby compatibility.
+    WindowsEnhancedMode bool `json:"windows_enhanced_mode,omitempty"`
 }
 
 type Config struct {
