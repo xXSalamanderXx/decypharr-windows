@@ -1,4 +1,5 @@
-# Decypharr (Windows fork)
+# Decypharr (Windows fork) 
+# ⚠️ PRE-RELEASE (WIP) - DO NOT USE!
 
 This repository is a Windows-focused fork of sirrobot01/decypharr. It preserves upstream Linux behavior while adding optional Windows-specific functionality.
 
