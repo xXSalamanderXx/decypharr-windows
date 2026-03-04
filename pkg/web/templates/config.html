@@ -113,12 +113,28 @@
 
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                 <div class="form-control">
-                                    <label class="label" for="discordWebhookUrl">
-                                        <span class="label-text font-medium">Discord Webhook URL</span>
+                                    <label class="label cursor-pointer justify-start gap-3">
+                                        <input type="checkbox" class="checkbox checkbox-lg" name="windows_enhanced_mode" id="windows_enhanced_mode">
+                                        <div>
+                                            <span class="label-text font-medium text-lg">Enable Windows improved functionality</span>
+                                            <div class="label-text-alt">When enabled, accept pre-mounted rclone paths (drive-letter and directory mounts) and enable Windows linking behavior (junctions/symlinks).</div>
+                                        </div>
                                     </label>
-                                    <textarea class="textarea textarea-bordered" id="discordWebhookUrl" name="discord_webhook_url" placeholder="https://discord.com/api/webhooks/..."></textarea>
                                 </div>
 
+                                <div class="form-control">
+                                    <label class="label" for="ui_theme">
+                                        <span class="label-text font-medium">Theme</span>
+                                    </label>
+                                    <select class="select select-bordered" id="ui_theme" name="ui_theme">
+                                        <option value="charcoal">Charcoal (default)</option>
+                                        <option value="light">Light</option>
+                                    </select>
+                                    <div class="label"><span class="label-text-alt">Choose light or dark theme</span></div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
                                 <div class="form-control">
                                     <label class="label" for="allowedExtensions">
                                         <span class="label-text font-medium">Allowed File Extensions</span>
@@ -790,6 +806,17 @@
         </div>
     </div>
 </div>
+
+<footer class="footer p-4">
+    <div class="items-center grid-flow-col">
+        <p>
+            Fork of sirrobot01/decypharr — Created by
+            <a href="https://github.com/xXSalamanderXx" target="_blank" rel="noopener noreferrer">
+                xXSalamanderXx
+            </a>
+        </p>
+    </div>
+</footer>
 
 <script>
     // Tab Navigation Handler

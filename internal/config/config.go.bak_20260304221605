@@ -131,10 +131,12 @@ type Rclone struct {
 
 	LogLevel string `json:"log_level,omitempty"`
 
+	// Windows enhanced functionality flag.
 	// When true, enables Windows-specific behaviors such as accepting pre-mounted
 	// rclone WebDAV mounts (drive letters and directory mounts) and creating
 	// verified links (junctions/symlinks) for better Plex/Emby compatibility.
 
+	// Windows enhanced functionality flag
 	// When true, enables Windows-specific behaviors such as accepting pre-mounted
 	// rclone WebDAV mounts (drive letters and directory mounts) and creating
 	// verified links (junctions/symlinks) for better Plex/Emby compatibility.
@@ -147,11 +149,6 @@ type Config struct {
 	Port        string `json:"port,omitempty"`
 
 	LogLevel string `json:"log_level,omitempty"`
-	// Windows enhanced functionality flag.
-	// When true, enables Windows-specific behaviors such as accepting pre-mounted
-	// rclone WebDAV mounts (drive letters and directory mounts) and creating
-	// verified links (junctions/symlinks) for better Plex/Emby compatibility.
-	WindowsEnhancedMode bool `json:"windows_enhanced_mode,omitempty"`
 
 	Debrids            []Debrid    `json:"debrids,omitempty"`
 	QBitTorrent        QBitTorrent `json:"qbittorrent,omitempty"`

@@ -1,4 +1,28 @@
-# Decypharr
+# Decypharr (Windows fork)
+
+This repository is a Windows-focused fork of sirrobot01/decypharr. It preserves upstream Linux behavior while adding optional Windows-specific functionality.
+
+Key additions in this fork:
+- Windows enhanced mode (config option + env override) to enable Windows-only behaviors.
+- Accept pre-mounted rclone WebDAV mounts (drive-letter like Z:\... and directory mounts like C:\mnt\zurg\...).
+- Verified link creation (junctions/symlinks) with retries/backoff to present files to Plex/Emby without full downloads.
+- UI: Windows path examples shown when enabled, and light/dark theme toggle. Default theme: charcoal grey with red accents.
+- win-build.ps1: build script that outputs dist\decypharr.exe with CGO_ENABLED=0 and upstream-style ldflags.
+- Discord & documentation links removed from the UI; footer credits this fork.
+
+Windows build (example)
+
+From PowerShell (in repo root):
+
+.\win-build.ps1 -Version "0.1.0" -Channel "stable"
+
+Environment variables used:
+- DECYPHARR_WINDOWS_ENHANCED=true  # force-enable Windows enhanced mode
+
+Upstream Docker and Linux build instructions remain valid in this fork.
+
+---
+
 
 ![ui](docs/docs/images/main.png)
 

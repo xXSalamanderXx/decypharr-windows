@@ -1,4 +1,5 @@
-#//go:build !windows
+//go:build !windows
+
 package fs
 
 // CreateLinkWithRetries is a no-op on non-Windows platforms (shim).

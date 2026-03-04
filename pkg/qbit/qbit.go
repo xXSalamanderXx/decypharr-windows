@@ -28,7 +28,7 @@ func New() *QBit {
 		Categories:          cfg.Categories,
 		AlwaysRmTrackerUrls: cfg.AlwaysRmTrackerUrls,
 		storage:             wire.Get().Torrents(),
-		logger:         	 logger.New("qbit"),
+		logger:              logger.New("qbit"),
 	}
 }
 
